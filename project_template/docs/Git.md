@@ -66,12 +66,7 @@ Use the format: `<type>(<scope>): <short description>`
   - Optional description: Detailed explanation, wrapped at 72 characters.  
   - Optional issue reference: e.g., `Fixes #123`.
 
-### Examples
-- `feat(data): add MNIST dataloader`  
-- `fix(train): correct tensor shape mismatch`  
-- `docs(mlflow): add usage examples to README`  
-- `refactor(model): simplify forward pass`  
-- `chore: update .gitignore to exclude mlruns/`  
+ 
 ### Examples
 - `feat(data): add MNIST dataloader`  
 - `fix(train): correct tensor shape mismatch`  
