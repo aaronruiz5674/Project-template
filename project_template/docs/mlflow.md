@@ -45,29 +45,28 @@ The main objectives of using MLflow are:
 
 ## 4. Installation and Setup
 1. Install MLflow via pip:
+```bash
 pip install mlflow
-
+```
 2. Start the tracking server:
+```bash
 mlflow ui
+```
 
-3. Folder structure: 
+3. Folder structure:
+```text
 mlruns/
     └── <experiment_id>/
         └── <run_id>/
             ├── metrics/
             ├── params/
             └── artifacts/
-
+```
 4. Basic Usage Example
 
 Track an experiment and save a scikit-learn model:
-
-import mlflow
-import mlflow.sklearn
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-
+```
+```python
 # Load data
 X, y = load_iris(return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -79,6 +78,7 @@ with mlflow.start_run():
     accuracy = model.score(X_test, y_test)
     mlflow.log_metric("accuracy", accuracy)
     mlflow.sklearn.log_model(model, "model")
+```
 
 5. Advantages and Disadvantages
 
@@ -97,12 +97,13 @@ Initial learning curve.
 Complex setup in large environments.
 
 6. Simplified MLflow Diagram
+```text
              +-----------------+
              |   Experiment    |
              +-----------------+
                      |
           +----------+----------+
-          |                     |
+          |                     |   
  +----------------+      +----------------+
  | MLflow Tracking|      | MLflow Projects|
  +----------------+      +----------------+
@@ -114,6 +115,4 @@ Complex setup in large environments.
  +----------------+
  | MLflow Registry|
  +----------------+
-
-
-Arrows indicate the typical workflow: track → save → version → deploy.
+```
